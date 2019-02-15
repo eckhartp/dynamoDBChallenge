@@ -36,7 +36,7 @@ for(var i=0; i < 100; i++){
 
 const content = JSON.stringify(data);
 
-fs.appendFile('./data/collerData.json', content, 'utf8', function (err) {
+fs.appendFile('./data/collarData.json', content, 'utf8', function (err) {
     if (err) {
         return console.log(err);
     }
