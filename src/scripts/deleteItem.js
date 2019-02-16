@@ -1,6 +1,6 @@
 var DynamoDB = require("../../lib/DynamoDB.js");
 
-var partitionKey = "1"
-var sortKey = "545bf2f9-3169-11e9-96c4-8ff0bb9f7c50"
+var partitionKey = "1000c2a690c9740"
+var sortKey = "1550342534173"
 
 DynamoDB.deleteItem(partitionKey, sortKey)

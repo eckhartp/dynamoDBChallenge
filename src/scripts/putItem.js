@@ -3,7 +3,7 @@ var DynamoDB = require("../../lib/DynamoDB.js");
 var putParams = {
     "TableName": DynamoDB.TABLE_NAME,
     "Item":{
-        "partitionKey":"7777f380-3143-11e9-8e45-17d899527725",
+        "partitionKey":"100001000",
         "sortKey":"1550250298008",
         "motion":{"x":123,"y":456,"z":789},
         "gps":{

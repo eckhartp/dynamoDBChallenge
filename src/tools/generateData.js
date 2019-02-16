@@ -3,7 +3,8 @@ var fs = require('fs');
 var datetime = require('node-datetime');
 
 var data = []
-for(var i=0; i < 100; i++){
+for(var i=0; i < 20; i++){
+    var now = datetime.create();
     var device = i%10
     if (i < 50){
         var model = "1000"
@@ -13,7 +14,7 @@ for(var i=0; i < 100; i++){
     data.push(
         {
             "partitionKey" : model+"c2a690c974"+device,
-            "sortKey" : now.now(),
+            "sortKey" : now.now().toString(),
             "motion" : {
                     "x" : 300,
                     "y" : 456,
