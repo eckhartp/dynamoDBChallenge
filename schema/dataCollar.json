@@ -1,0 +1,47 @@
+{
+    "name": "code-challenge-203",
+    "description": "Describes the data schema for a Data Collar",
+    "schema": {
+        "type": "object",
+        "description": "An object representing a Data Collar.",
+        "properties": {
+            "partitionKey": {
+                "type": "string",
+                "description": "Composed of model number and mac address"
+            },
+            "sortKey": {
+                "type": "string",
+                "description": "timestamp the item was created on device"
+            },
+            "motion": {
+                "type": "object",
+                "description": "an array of objects. Each object contains x,y,z data from accelerometer, gyroscope, and magnetometer. ",
+                "properties": {
+                    "xAccel": "number",
+                    "yAccel": "number",
+                    "zAccel": "number",
+                    "xGyro" : "number",
+                    "yGyro" : "number",
+                    "yGyro" : "number",
+                    "yGyro" : "number",
+                    "zGyro" : "number",
+                    "xMagn" : "number",
+                    "yMagn" : "number",
+                    "zMagn" : "number"
+                }
+            },
+            "audio": {
+                "type": "array",
+                "description": "an array containing audio data "
+            },
+            "gps": {
+                "type": "array",
+                "description": "an array containing GPS data"
+            },
+            "counter": {
+                "type": "array",
+                "description": "counters to track number of times the dog leaves the boundary, engages in particular types of activites, or is begin vocal"
+            }
+        }
+    }
+}
