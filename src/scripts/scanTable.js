@@ -1,4 +1,5 @@
 var DynamoDB = require("../../lib/DynamoDB.js");
+//TODO require('inquirier') and create prompts to obtain the options values
 
 options = {
     ProjectionExpression: "#p, sortKey, motion.x",

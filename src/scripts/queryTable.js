@@ -1,5 +1,7 @@
 var DynamoDB = require("../../lib/DynamoDB.js");
 
+//TODO require('inquirier') and create prompts to obtain the options values
+
 var options = {
     KeyConditionExpression: "#p = :v",
     ExpressionAttributeNames:{

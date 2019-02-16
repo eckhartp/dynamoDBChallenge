@@ -9,7 +9,8 @@
   "author": "Patricia Eckhart",
   "homepage": "https://github.com/eckhartp/dynamoDBChallenge#readme",
   "dependencies": {
-    "aws-sdk": "^2.402.0"
+    "aws-sdk": "^2.402.0",
+    "inquirer": "^6.2.2"
   },
   "devDependencies": {
     "node-datetime": "^2.1.2",

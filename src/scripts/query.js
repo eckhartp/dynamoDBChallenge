@@ -1,4 +1,47 @@
 var DynamoDB = require("../../lib/DynamoDB.js");
+var inquirer = require('inquirer');
+var fs = require('fs'); 
+
+//TODO fix errors to make this work
+
+// var Questions = [
+//     {
+//         type: 'Input',
+//         name: 'partitionKey',
+//         message: 'Enter the partition key'
+//     },
+//     {
+//         type: 'Input',
+//         name: 'projectionExpression',
+//         message: 'Enter the desired Projection Expression'
+//     },
+//     {
+//         type: 'Input',
+//         name: 'KeyConditionExpression',
+//         message: 'Enter the Key Condition Expression'
+//     },
+//     {
+//         type: 'Input',
+//         name: 'filename',
+//         message: 'Enter the file that contains the Expresion Attributes and Expression Values'
+//     }
+// ]
+// function getInfo(){
+//     return inquirer.prompt(Questions).then(ans => {
+//         console.log(ans)
+
+//         var filename = ans.filename
+//         var data = JSON.parse(fs.readFileSync(filename, 'utf8'));
+//         data[":p"] = ans.partitionKey  
+//         var options = {
+//             ProjectionExpression: ans.projectionExpression,
+//             KeyConditionExpression: ans.KeyConditionExpression,
+//             ExpressionAttributeNames:data.ExpressionAttributeNames,
+//             ExpressionAttributeValues: data.ExpressionAttributeValues
+//         }
+//         DynamoDB.queryTable2(options)
+//     })
+// }
 
 partitionKey = "1550259306802"
 var options = {
@@ -15,3 +58,4 @@ var options = {
 }
 
 DynamoDB.queryTable2(options)
+// getInfo()

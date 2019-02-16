@@ -1,4 +1,5 @@
 var DynamoDB = require("../../lib/DynamoDB.js");
+//TODO require('inquirier') and create prompts to obtain the options values
 
 var partitionKey = "1"
 var sortKey = "545bf2f9-3169-11e9-96c4-8ff0bb9f7c50"

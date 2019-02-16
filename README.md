@@ -70,44 +70,18 @@ The `src/scripts` folder contains node scripts to demonstrate how to use the hel
 
 | Script                        | Description |
 | -----------                   | ----------- |
-| conditionalDeleteItem.js      | Deletes an item from the table if it meets the specifed condition       |
+| app.js                        | Untested js file that contains some routes to implement further      |
+| batchGetItem.js               | Gets a batch of items with the specified partition keys and sort keys. Requires an array of Objects of partition keys and sort keys       |
+| batchPutItem.js               | Writes a batch of items to DynamoDB. Requires an array of objects        |
+| conditionalDeleteItem.js      | Deletes an item from the table if it meets the specifed condition. Requires partiton key, sort key, and condtional expression       |
 | deleteItem.js                 | Deletes the time with the specified parition key and sort key        |
 | getItem.js                    | Gets an item with the specified partition key and sort key        |
-| incrementCounter.js           | Increments one of six atomic atomic counters      |
-| main.js                       | Text        |
+| incrementCounter.js           | Increments a specific counter. These counters are indented to track different types of activity     |
 | putItem.js                    | Adds the defined item to the table        |
-| query.js                      | Finds and returns the specified item        |
-| queryTable.js                 | Finds and returns the specified attributes of a specified item        |
-| scanTable.js                  | Text        |
-| updateItem.js                 | Text        |
+| query.js                      | retrieves items        |
+| queryTable.js                 | retrieves items with the specified attributes        |
+| scanTable.js                  | reads every time in the table and returns all the data        |
+| updateItem.js                 | updtes the specified item with the specified attributes        |
 
 -: 
 **The scripts default to using the table named **'code-challenge-203'**. To change the name of the table, redefine the const TABLE_NAME found in `lib/dynamoDB.js`
-
-
-
-
-
-
-#schema
-partitionKey    : model number and collar mac address
-sortKey         : mac address of dog collar
-motion      : an array of motion data samples from some predefined duration of time
-gps         : location data last polled gps coordinates - sent at regular intervals or more frequently when triggered
-audio       : an array of frequencis from some predefined duration of time included in payload only if values > 1000 Hz
-counters    : an array of atomic counters that track the number of times a dog enters a particular state
-
-
-50 samples every 2 seconds
-model0000 epoch time
-model001000 epoch time
-
-
-
-never more than once every two seconds
-partitionKEy model+deviceID
-sortKey timestamp
-
-device wakesup on bark or motion
-while there is motion or barking the device will collect data for two seconds and then send to cloud
-if barking and motion stop and location outside of predefined max radius gps location sent every two seconds
