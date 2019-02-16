@@ -4,14 +4,13 @@ var datetime = require('node-datetime');
 
 var data = []
 for(var i=0; i < 100; i++){
-    var now = Date.now()
-    var sortKey = datetime.create(now)
+    var model = i%10
     data.push(
         {
-            "partitionKey" : uuidv1(),
-            "sortKey" : sortKey._created,
+            "partitionKey" : "c2a690c974"+model.toString(),
+            "sortKey" : uuidv1(),
             "motion" : {
-                    "x" : 123,
+                    "x" : 300,
                     "y" : 456,
                     "z" : 789
                 },
@@ -29,7 +28,14 @@ for(var i=0; i < 100; i++){
                     "seconds": Math.abs(15-i)/30
                 } 
             },
-            "audio" : [2000,2050,2500,2000,1850]
+            "audio" : [2000,2050,2500,2000,1850],
+            "counters": {
+                "onTheLoose": 0,
+                "franticBark": 0,
+                "meanBark": 0,
+                "running": 0,
+                "jumping": 0
+            }
         }
     )
 }
