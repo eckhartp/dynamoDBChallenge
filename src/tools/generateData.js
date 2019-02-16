@@ -4,11 +4,16 @@ var datetime = require('node-datetime');
 
 var data = []
 for(var i=0; i < 100; i++){
-    var model = i%10
+    var device = i%10
+    if (i < 50){
+        var model = "1000"
+    }else{
+        model = "2000"
+    }
     data.push(
         {
-            "partitionKey" : "c2a690c974"+model.toString(),
-            "sortKey" : uuidv1(),
+            "partitionKey" : model+"c2a690c974"+device,
+            "sortKey" : now.now(),
             "motion" : {
                     "x" : 300,
                     "y" : 456,

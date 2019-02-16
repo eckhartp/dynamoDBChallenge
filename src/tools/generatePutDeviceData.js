@@ -4,9 +4,9 @@ var datetime = require('node-datetime');
 
 var data = []
 
-for(var i=0; i < 100; i++){
+for(var i=0; i < 20; i++){
     var device = i%10
-    if (i < 50){
+    if (i < 10){
         var model = "1000"
     }else{
         model = "2000"
@@ -15,16 +15,21 @@ for(var i=0; i < 100; i++){
     var now = datetime.create();
     now.now();
     data.push(
-        {
-            "partitionKey" : model+"c2a690c974"+device,
-            "sortKey" : now.now()
+        { 
+            PutRequest: {
+                Item: {
+                    "partitionKey" : {"S": model+"c2a690c974"+device},
+                    "sortKey" : {"S": now.now().toString()},
+                    
+                }
+           }
         }
     )
 }
 
 const content = JSON.stringify(data);
 
-fs.appendFile('./data/deviceData.json', content, 'utf8', function (err) {
+fs.appendFile('./data/putDeviceData.json', content, 'utf8', function (err) {
     if (err) {
         return console.log(err);
     }
