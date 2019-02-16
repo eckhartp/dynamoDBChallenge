@@ -1,5 +1,8 @@
 # dynamoDBChallenge
-This repo contains helper functions to work progammatically with a previously created table in DynamoDB, an application that sets up some routes to allowa a device to send data to DynamoDB, and some tools to help generate mock items to load into a prevously created table.
+This repo contains helper functions to work progammatically with a previously created table in DynamoDB, an application that sets up some routes to allowa a device to send data to DynamoDB(NOT FULLY DEVELOPED OR TESTED AT ALL!!), and some tools to help generate data to load into a prevously created table.
+
+# The Data Collar(Beginning Concept)
+The dog collar contains a 9 DOF motion sesnor, a microphone, an ADC(audio processing), spiflash, and an gps IC. When the motion sensor detects motion or the audio detects frequencies that indicate barking the device will begin to poll the sensors and store data in spiflash. Every two seconds a payload of the collected motion, audio, and gps data will be sent to DynamoDB. 
 
 # Get Started
 
@@ -99,9 +102,7 @@ counters    : an array of atomic counters that track the number of times a dog e
 model0000 epoch time
 model001000 epoch time
 
-/deviceinit
-/highlyActive bark and motion
-/onTheLoose
+
 
 never more than once every two seconds
 partitionKEy model+deviceID
